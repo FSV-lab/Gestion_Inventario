@@ -1,0 +1,74 @@
+root { 
+    display: block; 
+}
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #3a4f54; 
+    background-color: #dfecf1; 
+    font-size: small;
+}
+a { 
+    color: #e33b06; 
+    text-decoration: none; 
+}
+table {
+    empty-cells: show; 
+} 
+form.jsfcrud_list_form th, td th {
+    font-size: x-small; color: #4e6a71;
+    border-top-style: solid; 
+    border-bottom-style: solid;
+    border-left-style: solid; 
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px; 
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6; 
+    border-left-color: #90b4bd; 
+    border-right-color: #90b4bd; 
+    letter-spacing: 3px; 
+    text-align: left; 
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px; 
+    background-color: #b2d5d6; 
+} td {
+    vertical-align: top;
+    padding-bottom: 8px; 
+    font-size: small; 
+} 
+form.jsfcrud_list_form td, td td {
+        border-top-style: solid; 
+        border-bottom-style: solid; 
+        border-left-style: solid;
+        border-right-style: solid; 
+        border-top-width: 1px;
+        border-bottom-width: 1px; 
+        border-left-width: 1px; 
+        border-right-width: 1px; 
+        border-top-color: #b2d5d6;
+        border-bottom-color: #b2d5d6;
+        border-left-color: #b2d5d6; 
+        border-right-color: #b2d5d6;
+        vertical-align: baseline; 
+        padding-bottom: 0px; 
+} 
+tr.jsfcrud_odd_row { 
+    background-color: #fefeff; 
+    color: #4e6a71;
+}
+tr.jsfcrud_even_row { 
+    background-color: #eff5fa;
+    color: #4e6a71; }
+#busyImage {
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+} #encabezado { 
+    width: 1500px;
+    height: 350px;
+    background-color:seagreen;
+    background: url("http://localhost:8080/Gestion_Inventario/faces/resources/images/Logoste2.png") no-repeat ; border: #d3d3d3 1px solid ; } img#imagen_de_fondo { min-height: 900px; min-height: 150px; background: url("http://localhost:8080/Gestion_citas_odontologicas/faces/resources/imagenes/Banner1.jpg") no-repeat ; border: #d3d3d3 1px solid ; } #encabezado h1 { text-align: center ; margin-top: 50px; } div#contenido { border: #ffe3b3 1px solid ; margin: 20px 20px 10px 180px; padding: 10px 15px; } div#contenido { border: #ffe3b3 1px solid ; margin: 20px 20px 10px 180px; padding: 10px 15px; width: 690px; } #contenido h2 { color: #c2c2c2; border-bottom: #CFBFB5 1px solid; } #menu { float: left; width: 150px; text-align: center; } #menu ul { padding: 0px; } #menu li{ color: #fff; background-color: #26798e; border-bottom: #CFBFB5 2px solid; border-left: #CFBFB5 2px solid; margin: 5px 5px 5px 5px; padding: 10px; }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDetalleVentaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_idDetalleVenta}" for="idDetalleVenta" />
+                    <h:inputText id="idDetalleVenta" value="#{detalleVentaController.selected.idDetalleVenta}" title="#{bundle.CreateDetalleVentaTitle_idDetalleVenta}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_idDetalleVenta}"/>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_idProducto}" for="idProducto" />
+                    <h:inputText id="idProducto" value="#{detalleVentaController.selected.idProducto}" title="#{bundle.CreateDetalleVentaTitle_idProducto}" />
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_fechaIngreso}" for="fechaIngreso" />
+                    <h:inputText id="fechaIngreso" value="#{detalleVentaController.selected.fechaIngreso}" title="#{bundle.CreateDetalleVentaTitle_fechaIngreso}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_fechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_fechaReparacion}" for="fechaReparacion" />
+                    <h:inputText id="fechaReparacion" value="#{detalleVentaController.selected.fechaReparacion}" title="#{bundle.CreateDetalleVentaTitle_fechaReparacion}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_fechaReparacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_fechaEntrega}" for="fechaEntrega" />
+                    <h:inputText id="fechaEntrega" value="#{detalleVentaController.selected.fechaEntrega}" title="#{bundle.CreateDetalleVentaTitle_fechaEntrega}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_fechaEntrega}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_cantidad}" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{detalleVentaController.selected.cantidad}" title="#{bundle.CreateDetalleVentaTitle_cantidad}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_cantidad}"/>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{detalleVentaController.selected.precio}" title="#{bundle.CreateDetalleVentaTitle_precio}" required="true" requiredMessage="#{bundle.CreateDetalleVentaRequiredMessage_precio}"/>
+                    <h:outputLabel value="#{bundle.CreateDetalleVentaLabel_idOrden}" for="idOrden" />
+                    <h:selectOneMenu id="idOrden" value="#{detalleVentaController.selected.idOrden}" title="#{bundle.CreateDetalleVentaTitle_idOrden}" >
+                        <f:selectItems value="#{facturaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{detalleVentaController.create}" value="#{bundle.CreateDetalleVentaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{detalleVentaController.prepareList}" value="#{bundle.CreateDetalleVentaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateDetalleVentaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

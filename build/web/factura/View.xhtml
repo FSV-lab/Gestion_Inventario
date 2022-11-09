@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewFacturaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewFacturaLabel_idOrden}"/>
+                    <h:outputText value="#{facturaController.selected.idOrden}" title="#{bundle.ViewFacturaTitle_idOrden}"/>
+                    <h:outputText value="#{bundle.ViewFacturaLabel_totalFactura}"/>
+                    <h:outputText value="#{facturaController.selected.totalFactura}" title="#{bundle.ViewFacturaTitle_totalFactura}"/>
+                    <h:outputText value="#{bundle.ViewFacturaLabel_idCliente}"/>
+                    <h:outputText value="#{facturaController.selected.idCliente}" title="#{bundle.ViewFacturaTitle_idCliente}"/>
+                    <h:outputText value="#{bundle.ViewFacturaLabel_idProducto}"/>
+                    <h:outputText value="#{facturaController.selected.idProducto}" title="#{bundle.ViewFacturaTitle_idProducto}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{facturaController.destroyAndView}" value="#{bundle.ViewFacturaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewFacturaEditLink}"/>
+                <br />
+                <h:commandLink action="#{facturaController.prepareCreate}" value="#{bundle.ViewFacturaCreateLink}" />
+                <br />
+                <h:commandLink action="#{facturaController.prepareList}" value="#{bundle.ViewFacturaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewFacturaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
